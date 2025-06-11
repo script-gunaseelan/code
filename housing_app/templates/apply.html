@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Apply for Housing</h2>
+<form method="post" enctype="multipart/form-data">
+  <label>Full Name <input name="full_name" required></label><br>
+  <label>Annual Income <input name="income" required></label><br>
+  <label>Supporting Document <input type="file" name="document"></label><br>
+  <button type="submit">Submit Application</button>
+</form>
+<p><a href="{{ url_for('dashboard') }}">Back to Dashboard</a></p>
+{% endblock %}

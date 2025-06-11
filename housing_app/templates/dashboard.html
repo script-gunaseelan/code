@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Dashboard</h2>
+<p><a href="{{ url_for('apply') }}">New Application</a> | <a href="{{ url_for('logout') }}">Logout</a></p>
+<ul>
+{% for app in apps %}
+  <li>{{ app.full_name }} - {{ app.income }} {% if app.uploaded_file %}(file: {{ app.uploaded_file }}){% endif %}</li>
+{% else %}
+  <li>No applications yet.</li>
+{% endfor %}
+</ul>
+{% endblock %}
